@@ -1,0 +1,121 @@
+" No vi compatible mode
+set nocompatible
+" Vundle requires filetype detection to be off
+filetype off
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle configuration
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Filesystem tree
+Plugin 'https://github.com/scrooloose/nerdtree.git'
+
+" Fuzzy searching
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
+
+" Fancy status bar
+Plugin 'https://github.com/bling/vim-airline'
+
+" List/QuickFix toggling
+Plugin 'https://github.com/Valloric/ListToggle.git'
+
+" A color scheme database; live view at http://bytefluent.com/vivify/
+Plugin 'https://github.com/flazz/vim-colorschemes.git'
+
+" Git integration
+Plugin 'https://github.com/tpope/vim-fugitive.git'
+
+" Trailing whitespaces highlighting
+Plugin 'https://github.com/ntpeters/vim-better-whitespace.git'
+
+" C/C++ better code highlighting
+Plugin 'https://github.com/octol/vim-cpp-enhanced-highlight.git'
+
+" C/C++ code completion
+Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+
+" All the Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General vim settings
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Display line numbers
+set number
+
+" Display tabs as 4 spaces
+set tabstop=4
+
+" When indenting with '>' use 4 spaces width
+set shiftwidth=4
+
+" On pressing tab insert 4 spaces
+set expandtab
+
+" Highlight matches when searching
+set hlsearch
+
+" Search as you type
+set incsearch
+
+" Turn on syntax highlighting
+syntax on
+
+" 80 characters wide color column
+set colorcolumn=80
+
+" Display status line all the time
+set laststatus=2
+
+" Don't show preview window during autocompletion
+set completeopt-=preview
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins configuration
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" YouCompleteMe settings
+let g:ycm_always_populate_location_list=1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GVim specific settings
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if has("gui_running")
+    " No menubar, toolbar, scrollbars; use console dialogs
+    set guioptions=c
+
+    " Set a fancy colorscheme
+    colorscheme molokai
+    "colorscheme candyman
+
+    " Set a fancy font, download at: http://dejavu-fonts.org/wiki/Download
+    set guifont=DejaVu\ Sans\ Mono\ 10
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Key mapping
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Toggle NERDTree
+nnoremap <F2> :NERDTreeToggle<CR>
+
+" Recompile and update diagnostics
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+" Show window with detail diagnostics
+nnoremap <F6> :YcmDiags<CR>
+
