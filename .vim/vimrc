@@ -81,6 +81,9 @@ set laststatus=2
 " Don't show preview window during autocompletion
 set completeopt-=preview
 
+" Make tabs more visible
+set listchars=tab:▸\ 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins configuration
 "
@@ -110,6 +113,12 @@ endif
 " Key mapping
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Get rid of annoying typos
+command WQ wq
+command Wq wq
+command W w
+command Q q
 
 " Toggle NERDTree
 nnoremap <F2> :NERDTreeToggle<CR>
