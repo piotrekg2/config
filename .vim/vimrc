@@ -82,6 +82,7 @@ set laststatus=2
 set completeopt-=preview
 
 " Make tabs more visible
+set list
 set listchars=tab:▸\ 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
