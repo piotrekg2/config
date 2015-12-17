@@ -85,10 +85,16 @@ set completeopt-=preview
 set list
 set listchars=tab:▸\ 
 
+" Set .swp files location
+set directory=$HOME/.vim/swapfiles//
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins configuration
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" No cap for the number of scanned files
+let g:ctrlp_max_files=0
 
 " YouCompleteMe settings
 let g:ycm_always_populate_location_list=1
@@ -121,11 +127,14 @@ command Wq wq
 command W w
 command Q q
 
+" Replace word under cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+
 " Toggle NERDTree
 nnoremap <F2> :NERDTreeToggle<CR>
 
 " Recompile and update diagnostics
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 " Show window with detail diagnostics
-nnoremap <F6> :YcmDiags<CR>
+nnoremap <F6> :YcmCompleter GetType<CR>
 
