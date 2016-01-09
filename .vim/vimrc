@@ -99,6 +99,9 @@ let g:ctrlp_max_files=0
 " YouCompleteMe settings
 let g:ycm_always_populate_location_list=1
 
+" Turn on doxygen syntax highlighting
+let g:load_doxygen_syntax=1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GVim specific settings
 "
@@ -137,4 +140,8 @@ nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 " Show window with detail diagnostics
 nnoremap <F6> :YcmCompleter GetType<CR>
+
+" Run clang-format
+map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
+imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
 
